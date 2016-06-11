@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btn = (Button)findViewById(R.id.btnChangeColor);
 
-        ValueAnimator groundAnimator = ObjectAnimator.ofInt
+        final ValueAnimator groundAnimator = ObjectAnimator.ofInt
                 (btn, "backgroundColor",
                         Color.GREEN, Color.RED);
         //set same duration and animation properties as others
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         groundAnimator.setEvaluator(new ArgbEvaluator());
         groundAnimator.setRepeatCount(ValueAnimator.INFINITE);
         groundAnimator.setRepeatMode(ValueAnimator.REVERSE);
+
 
         groundAnimator.start();
 
